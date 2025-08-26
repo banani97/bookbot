@@ -17,3 +17,17 @@ def char_number(file_path):
             else:
                 number_letters[letter]=1
     return number_letters
+
+def helper_sort(items):
+    return items["num"]
+
+def sort(char_dict):
+    char_dict_list=[]
+    for i in char_dict:
+        single_char_dict={}
+        single_char_dict["char"]=i
+        single_char_dict["num"]=char_dict[i]
+        if i.isalpha():
+            char_dict_list.append(single_char_dict)
+    char_dict_list.sort(reverse=True, key=helper_sort)
+    return char_dict_list
